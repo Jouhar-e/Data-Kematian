@@ -5,11 +5,11 @@ $count = $db->getCount($sql);
 ?>
 
 <div class="bg-light shadow-lg" style="height: 200px; width: 400px;">
-    <div class="p-4">
+    <div class="p-4 m-2">
         <h1><?php echo $count ?></h1>
         <h4>Total Jumlah Penduduk</h4>
-        <div class="text-end">
-            <button class="btn btn-outline-primary btn-sm">Details</button>
+        <div class="text-end mt-4">
+            <a href="?f=beranda&m=dataPenduduk" class="btn btn-outline-primary btn-sm">Details</a>
         </div>
     </div>
 </div>
