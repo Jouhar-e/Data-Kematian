@@ -37,7 +37,7 @@
             </figcaption>
             <div>
                 <p>
-                    Ini adalah contoh konten yang sebagian besar teksnya akan disembunyikan. Bagian pertama dari konten akan selalu terlihat.
+                    Ini adalah contoh konten sebagian besar teksnya akan disembunyikan. Bagian pertama dari konten akan selalu terlihat.
                     <span id="moreContent" class="more-content">
                         Bagian kedua dari konten akan disembunyikan dan hanya akan muncul ketika pengguna mengklik 'Lihat Selengkapnya'.
                         Ini adalah bagian kedua dari konten. Anda bisa memasukkan informasi tambahan, cerita panjang, atau apapun yang Anda inginkan di sini.
