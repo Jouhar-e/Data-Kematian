@@ -42,6 +42,7 @@ $db = new DB;
                         $m = $_GET['m'];
 
                         $file = $f . "/" . $m . ".php";
+                        echo $file;
                         require_once $file;
                     } else {
                         require_once "beranda/beranda.php";

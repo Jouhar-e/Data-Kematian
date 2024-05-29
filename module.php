@@ -19,6 +19,8 @@ class DB
         return $koneksi;
     }
 
+
+    // untuk menampilkan data
     public function getData($sql)
     {
         $result = mysqli_query($this->koneksi, $sql);
@@ -30,6 +32,7 @@ class DB
         }
     }
 
+    // untuk mengambil data percolum
     public function getValue($sql)
     {
         $result = mysqli_query($this->koneksi, $sql);
@@ -37,6 +40,7 @@ class DB
         return $row;
     }
 
+    // untuk menampilkan jumlah data
     public function getCount($sql)
     {
         $result = mysqli_query($this->koneksi, $sql);
@@ -44,6 +48,7 @@ class DB
         return $count;
     }
 
+    // untuk mengeksekusi query
     public function exc($sql)
     {
         $result =  mysqli_query($this->koneksi, $sql);

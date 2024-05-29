@@ -8,6 +8,9 @@ $count = $db->getCount($sql);
     <div class="p-5">
         <h1><?php echo $count ?></h1>
         <h3>Total Jumlah Penduduk</h3>
+        <div class="text-end">
+            <a href="?f=beranda&m=datapenduduk" class="btn btn-outline-primary btn-sm">Details</a>
+        </div>
     </div>
 </div>
 
