@@ -24,9 +24,9 @@
     }
 </script>
 <div class="text-center ">
-    <br>
+    <!-- <br>
     <img src="image/naruto 2.jpg" class="rounded-circle mx-auto d-block" alt="..." style="width: 20%;">
-    </br>
+    </br> -->
     <div class="text-center">
         <figure>
             <blockquote class="blockquote">
@@ -53,7 +53,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <?php include 'diagram_jenis_kelamin.php'; ?>
+            <?php include 'datajumlahpenduduk.php'; ?>
         </div>
         <div class="col-md-4">
             <?php include 'diagram_usia.php'; ?>

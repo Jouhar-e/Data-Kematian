@@ -14,35 +14,42 @@ $db = new DB;
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="image/naruto 1.jpg" alt="" width="30" height="24">
-            </a>
-            <a class="navbar-brand" href="#">JWSM</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="?f=beranda&m=beranda">Home</a>
-                    <a class="nav-link" href="?f=penduduk&m=select">Data Penduduk</a>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadowt">
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center">
+                    <a class="navbar-brand" href="?f=beranda&m=beranda">My Website</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="?f=penduduk&m=select">Data Penduduk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </nav>
-
+        </nav>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="col mt-4">
+                <div class="col mt-4 col-sm-12">
                     <?php
                     if (isset($_GET['f']) && isset($_GET['m'])) {
                         $f = $_GET['f'];
                         $m = $_GET['m'];
 
                         $file = $f . "/" . $m . ".php";
-                        echo $file;
+                        // echo $file;
                         require_once $file;
                     } else {
                         require_once "beranda/beranda.php";
