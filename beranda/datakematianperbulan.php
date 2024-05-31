@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+<?php
+$sql = "SELECT * FROM penduduk";
+$count = $db->getCount($sql);
+// echo $count;
+?>
+
+<div class="bg-success text-center shadow rounded">
+    <div class="p-3">
+        <h1 class="mt-3"><?php echo $count ?></h1>
+        <h3>Total Kematian Per Bulan</h3>
+        <div class="text-end mt-2 mb-2">
+            <a href="?f=beranda&m=datapenduduk" class="btn btn-secondary btn-sm">Details</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,4 +50,4 @@
 <body>
     <div id="kematianChart" style="width: 100%; height: 300px;"></div>
 </body>
-</html>
+</html> -->

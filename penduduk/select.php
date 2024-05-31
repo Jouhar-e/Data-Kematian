@@ -15,7 +15,7 @@ $no = 1;
     </div>
 </div>
 
-<div>
+<div class="table-responsive">
     <table class="table table-striped mt-3">
         <thead>
             <tr>
@@ -28,7 +28,7 @@ $no = 1;
                 <th scope="col">Opsi</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="table-group-divider">
             <?php if (!empty($row)) : ?>
                 <?php foreach ($row as $key) : ?>
                     <script type="text/javascript">

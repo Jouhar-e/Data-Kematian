@@ -59,17 +59,9 @@ class DB
         echo "<script type='text/javascript'>alert('$msg');</script>";
     }
 
-    function confirmAction($message, $y, $n)
+    function getAlert($message)
     {
-        echo "<script>";
-        echo "function confirmAlert() {";
-        echo '  if (confirm("' . $message . '")) {';
-        echo '   ' . $y . ';';
-        echo "  } else {";
-        echo '    ' . $n . ';';
-        echo "  }";
-        echo "}";
-        echo "</script>";
-        echo '<button onclick="confirmAlert()">Konfirmasi</button>';
+        $errorMessage = "<script>window.alert('".$message."')</script>";
+        echo $errorMessage;
     }
 }

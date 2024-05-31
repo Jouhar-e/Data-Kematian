@@ -25,11 +25,17 @@ $db = new DB;
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="?f=penduduk&m=select">Data Penduduk</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="?f=penduduk&m=select">Data Penduduk</a></li>
+                                <li><a class="dropdown-item" href="#">Input Data</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="?f=petugas&m=select">Data Petugas</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="#">Akun</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Login</a>
@@ -41,21 +47,19 @@ $db = new DB;
     </div>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="col mt-4 col-sm-12">
-                    <?php
-                    if (isset($_GET['f']) && isset($_GET['m'])) {
-                        $f = $_GET['f'];
-                        $m = $_GET['m'];
+            <div class="mt-4 col-sm-12">
+                <?php
+                if (isset($_GET['f']) && isset($_GET['m'])) {
+                    $f = $_GET['f'];
+                    $m = $_GET['m'];
 
-                        $file = $f . "/" . $m . ".php";
-                        // echo $file;
-                        require_once $file;
-                    } else {
-                        require_once "beranda/beranda.php";
-                    }
-                    ?>
-                </div>
+                    $file = $f . "/" . $m . ".php";
+                    // echo $file;
+                    require_once $file;
+                } else {
+                    require_once "beranda/beranda.php";
+                }
+                ?>
             </div>
         </div>
     </div>
