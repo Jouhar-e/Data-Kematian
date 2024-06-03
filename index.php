@@ -5,7 +5,7 @@ $db = new DB;
 
 if (isset($_GET['log'])) {
     session_destroy();
-    header("location:index.php");
+    header("location:./");
 }
 
 ?>

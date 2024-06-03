@@ -67,7 +67,7 @@ if (isset($_POST['login'])) {
         $_SESSION['email'] = $row['email'];
         $_SESSION['idpetugas'] = $row['idpetugas'];
         $_SESSION['level'] = $row['level'];
-        header("location:../index.php");
+        header("location:../");
     }
 }
 ?>
