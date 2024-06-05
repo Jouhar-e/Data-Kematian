@@ -1,6 +1,14 @@
 <?php
+
+session_start();
 require_once "module.php";
 $db = new DB;
+
+if (isset($_GET['log'])) {
+    session_destroy();
+    header("location:./");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -25,21 +33,62 @@ $db = new DB;
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="?f=penduduk&m=select">Data Penduduk</a></li>
-                                <li><a class="dropdown-item" href="#">Input Data</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="?f=petugas&m=select">Data Petugas</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Akun</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="admin/login.php">Login</a>
-                        </li>
+                        <?php
+                        if (isset($_SESSION['email'])) {
+                            $level = $_SESSION['level'];
+                            switch ($level) {
+                                case 'Admin':
+                                    echo '
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="?f=penduduk&m=select">Data Penduduk</a></li>
+                                                <li><a class="dropdown-item" href="#">Input Data</a></li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a class="dropdown-item" href="?f=petugas&m=select">Data Petugas</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">' . $_SESSION['email'] . '</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="?log=logout">Logout</a>
+                                        </li>
+                                    ';
+                                    break;
+
+                                case 'Petugas':
+                                    echo '
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="?f=penduduk&m=select">Data Penduduk</a></li>
+                                                <li><a class="dropdown-item" href="#">Input Data</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">' . $_SESSION['email'] . '</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="?log=logout">Logout</a>
+                                        </li>
+                                    ';
+                                    break;
+
+                                default:
+                                    # code...
+                                    break;
+                            }
+                        } else {
+                            echo '
+                                <li class="nav-item">
+                                    <a class="nav-link" href="admin/login.php">Login</a>
+                                </li>
+                                ';
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>
