@@ -51,7 +51,7 @@ if (isset($_GET['log'])) {
                                             </ul>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">' . $_SESSION['email'] . '</a>
+                                            <a class="nav-link" href="?f=petugas&m=update">' . $_SESSION['email'] . '</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="?log=logout">Logout</a>
@@ -69,7 +69,7 @@ if (isset($_GET['log'])) {
                                             </ul>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">' . $_SESSION['email'] . '</a>
+                                            <a class="nav-link" href="?f=petugas&m=update">' . $_SESSION['email'] . '</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="?log=logout">Logout</a>
@@ -96,7 +96,7 @@ if (isset($_GET['log'])) {
     </div>
     <div class="container">
         <div class="row">
-            <div class="mt-4 col-sm-12">
+            <div class="mt-4 col-md-12">
                 <?php
                 if (isset($_GET['f']) && isset($_GET['m'])) {
                     $f = $_GET['f'];

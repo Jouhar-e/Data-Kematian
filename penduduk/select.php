@@ -1,19 +1,38 @@
+<div class="row">
+    <div class="col-md-2">
+        <a href="?f=penduduk&m=select" class="link-dark text-decoration-none"><h3>Data Penduduk</h3></a>
+    </div>
+    <div class="col-md-6">
+        <form action="" method="post">
+            <div class="float-start">
+                <input type="text" name="cari" class="form-control float-start" placeholder="Cari" id="">
+            </div>
+            <div class="float-start ms-3">
+                <input type="submit" name="simpan" value="Cari" class="btn btn-outline-secondary">
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4 text-end">
+        <a href="?f=penduduk&m=insert" class="btn btn-outline-secondary">Tambah Data</a>
+    </div>
+</div>
+
 <?php
-$sql = "SELECT * FROM penduduk ORDER BY penduduk ASC";
+
+if (isset($_POST['simpan'])) {
+    $cari = $_POST['cari'];
+    
+    $like = "WHERE penduduk LIKE '%$cari%' AND status = 1";
+}else {
+    $like = "WHERE status = 1";
+}
+
+$sql = "SELECT * FROM penduduk $like ORDER BY penduduk ASC";
 $row = $db->getData($sql);
 
 // var_dump($row);
 $no = 1;
 ?>
-
-<div class="row">
-    <div class="col">
-        <h3>Data Penduduk</h3>
-    </div>
-    <div class="col text-end">
-        <a href="?f=penduduk&m=insert" class="btn btn-outline-secondary">Tambah Data</a>
-    </div>
-</div>
 
 <div class="table-responsive">
     <table class="table table-striped mt-3">

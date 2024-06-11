@@ -41,7 +41,7 @@ if (isset($_POST['simpan'])) {
     $jk = $_POST['jk'];
     $alamat = $_POST['alamat'];
 
-    $sql = "INSERT INTO penduduk VALUES (NULL, '$nama', '$nik', '$tgllahir', '$jk', '$alamat')";
+    $sql = "INSERT INTO penduduk VALUES (NULL, '$nama', '$nik', '$tgllahir', '$jk', '$alamat', 1)";
     // echo $sql;
     $db->exc($sql);
     header("location:?f=penduduk&m=select");
