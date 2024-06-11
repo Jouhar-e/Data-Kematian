@@ -1,4 +1,4 @@
 # Data-Kematian
 
 
-Untuk mempermudah pendatan
+Untuk mempermudah pendataan
